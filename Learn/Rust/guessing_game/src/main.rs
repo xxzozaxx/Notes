@@ -1,7 +1,7 @@
 extern crate rand;
-use std::io;
-use std::cmp::Ordering;
-use rand::Rng;
+use std::io;             // for standerd I/O
+use std::cmp::Ordering;  // Compare type
+use rand::Rng;           // rand => random, Rng => range
 
 fn main() {
     println!("Guess the number!");
@@ -11,10 +11,10 @@ fn main() {
     loop {
         println!("please input your guess. ");
 
-        let mut guess = String::new();    /* :: mean associated function of str type*/
-        io::stdin().read_line(&mut guess) // could be std::io::stdin()
-        .expect("Failed to take input.");
-        let guess: u32 = guess.trim().parse() {
+        let mut guess = String::new();          /* :: mean associated function of str type*/
+        io::stdin().read_line(&mut guess)       // could be std::io::stdin()
+            .expect("Failed to take input.");
+        let guess: u32 = match guess.trim().parse() { // error handle
             Ok(num) => num,
             Err(_) => continue,
         };
