@@ -1,0 +1,27 @@
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [11pt, a4paper]
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: \setmainfont{EB Garamond}
+# #+LATEX_HEADER: \usepackage[margin=20mm]{geometry}
+#+OPTIONS: toc:nil c:nil
+
+
+#+AUTHOR: Ahmed Khaled
+#+TITLE: Mathematical Foundation
+
+#+BEGIN_abstract
+This Document contain my notes about Axioms, Definitions and basic theories.
+#+END_abstract
+
+* Real Numbers
+** Fields
+In rigorous mathematics real number is a set of numbers defined as a complete, ordered field
+
+- \textsc{Def}. /Field/ is a non-empty set on which two $\overline{\mbox{binary operation}}$ are
+ defined \marginpar{refer to Group theory and Set theory TODO}
+
+- \textsc{Def}. /Binary Operation/ in field $\mathbb{F}$ is a function that "take"
+ an ordered pair of element and "return" an element in $\mathbb{F}$, and it said to be
+ the operation on the set whose both domain and codomain in the same set.
+\[ \forall a,b \in \mathbb{F} (\exists c \in \mathbb{F}) : (c = a \circ b) \]
