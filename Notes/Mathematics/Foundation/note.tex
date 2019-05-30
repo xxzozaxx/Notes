@@ -1,4 +1,4 @@
-% Created 2019-05-27 Mon 23:50
+% Created 2019-05-30 Thu 15:06
 % Intended LaTeX compiler: xelatex
 \documentclass[11pt, a4paper]{article}
 \usepackage{graphicx}
@@ -14,6 +14,11 @@
 \usepackage{hyperref}
 \usepackage{fontspec}
 \setmainfont{EB Garamond}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsthm}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newtheorem{theorem}{Theorem}
+\newtheorem{Lemma}[theorem]{Lemma}
 \author{Ahmed Khaled}
 \date{\today}
 \title{Mathematical Foundation}
@@ -32,9 +37,9 @@ This Document contain my notes about Axioms, Definitions and basic theories.
 \end{abstract}
 
 \section{Real Numbers}
-\label{sec:orgd203bdc}
+\label{sec:org71e7ac2}
 \subsection{Fields}
-\label{sec:org7e4efb2}
+\label{sec:org6fb7fdd}
 In rigorous mathematics real number is a set of numbers defined as a complete, ordered field
 
 \begin{itemize}
@@ -43,7 +48,38 @@ defined \marginpar{refer to Group theory and Set theory TODO}
 
 \item \textsc{Def}. \emph{Binary Operation} in field \(\mathbb{F}\) is a function that "take"
 an ordered pair of element and "return" an element in \(\mathbb{F}\), and it said to be
-the operation on the set whose both domain and codomain in the same set.
+the operation on the set whose both domain and co-domain in the same set.
 \end{itemize}
 \[ \forall a,b \in \mathbb{F} (\exists c \in \mathbb{F}) : (c = a \circ b) \]
+
+\begin{itemize}
+\item the 9 golden basic most primitive axioms:
+\begin{enumerate}
+\item \textsc{Axi}. \emph{Associative law for addition} \(( a + b) + c = a + ( a + c )\)
+\item \textsc{Axi}. \emph{Existence of additive identity} \(\exists 0:  a + 0 = 0 + a = a\)
+\item \textsc{Axi}. \emph{Existence of additive inverse} \(\forall a \in \mathbb{R} \exists (-a) : a + (-a) = (-a) + a = 0\)
+\item \textsc{Axi}. \emph{Commutative law of addition} \(a + b = b + a\)
+\item \textsc{Axi}. \emph{Associative law for multiplication} \(( a \cdot b) \cdot c = a \cdot ( a \cdot c )\)
+\item \textsc{Axi}. \emph{Existence of multiplicative identity} \(\exists 1 \neq 0:  a \cdot 1 = 1 \cdot a = a\)
+\item \textsc{Axi}. \emph{Existence of multiplicative inverse} \(\forall a \neq 0 \in \mathbb{R} \exists (a^{-1}) : a + (a^{-1}) = (a^{-1}) + a = 0\)
+\item \textsc{Axi}. \emph{Commutative law of multiplication} \(a \cdot b = b \cdot a\)
+\item \textsc{Axi}. \emph{Distributive law} \(a \cdot ( b + c ) = a \cdot b + a \cdot c\)
+\end{enumerate}
+
+\item Theorem
+\end{itemize}
+
+\begin{theorem}
+  $ \forall a \in \mathbb{F}: a \cdot 0 = 0 $
+\end{theorem}
+
+\begin{proof}
+  using axiom Num.9
+  \begin{align*}
+    a \cdot 0 &= a \cdot (0 + 0) \\
+          &= a \cdot 0 + a \cdot 0 \\
+  \end{align*}
+by adding $-(a \cdot 0)$ to both side
+\[ a \cdot 0 = 0 \]
+\end{proof}
 \end{document}
