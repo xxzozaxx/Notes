@@ -1,0 +1,7 @@
+use std
+
+use "termbox"
+
+const main = {
+    std.put("hello termbox\n")
+}

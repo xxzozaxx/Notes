@@ -1,0 +1,27 @@
+use std
+const main = {
+    std.put("{} + {} = {}\n", 2, 2, 2+2)
+
+    var x = fac(10)
+    var y = facto(10)
+    std.put("10! = {}\n", x)
+    std.put("10! = {}\n", y)
+}
+
+const fac = {n
+    var acc = 1
+
+    while n > 0
+        acc *= n
+        n--
+    ;;
+
+    -> acc
+}
+
+const facto = {n
+    match n
+    | 1: -> n
+    | num: -> num * fac(num-1)
+;;
+}

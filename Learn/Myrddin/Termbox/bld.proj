@@ -1,0 +1,10 @@
+bin foo =
+    main.myr
+
+    termbox.myr
+    termbox.glue.c
+;;
+
+gen termbox.myr termbox.glue.c {dep=termbox.h} =
+    mcbind -lc -I /usr/include -b termbox termbox.h
+;;

@@ -1,0 +1,10 @@
+			 C undefined behavior
+
+
+Sources:
+1. A Guide to Undefined Behavior in C and C++.
+	https://blog.regehr.org/archives/213
+  1.1. [PDF] Luca Cardelli Type systems
+	http://lucacardelli.name/Papers/TypeSystems.pdf
+2. What Every C Programmer Should Know About Undefined Behavior
+	http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html

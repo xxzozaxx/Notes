@@ -1,0 +1,14 @@
+		       lp (Unix print command)
+1. How to print odd pages and even pages only
+```
+$ PDF=
+$ NUM=8
+
+# print odd pages
+$ lp "${PDF}" -P $(seq -s ',' 1 2 "${NUM}")
+
+# print even pages:
+$ lp "${PDF}" -P $(seq -s ',' 2 2 "${NUM}")
+'''
+
+2. How to print booklet

@@ -1,0 +1,143 @@
+pkg termbox =
+	type cfunc = void
+	type tb_cell = struct
+		ch : uint32_t
+		fg : uint16_t
+		bg : uint16_t
+	;;
+	type tb_event = struct
+		type : uint8_t
+		mod : uint8_t
+		key : uint16_t
+		ch : uint32_t
+		w : int32_t
+		h : int32_t
+		x : int32_t
+		y : int32_t
+	;;
+
+
+	type __qc_va_elem = struct
+		gp_offset : uint
+		fp_offset : uint
+		overflow_arg_area : void#
+		reg_save_area : void#
+	;;
+
+	type __qc_va_list = __qc_va_elem#
+	type __u_char = byte
+	type __u_short = uint16
+	type __u_int = uint
+	type __u_long = uint64
+	type __int8_t = byte
+	type __uint8_t = byte
+	type __int16_t = int16
+	type __uint16_t = uint16
+	type __int32_t = int
+	type __uint32_t = uint
+	type __int64_t = int64
+	type __uint64_t = uint64
+	type __int_least8_t = __int8_t
+	type __uint_least8_t = __uint8_t
+	type __int_least16_t = __int16_t
+	type __uint_least16_t = __uint16_t
+	type __int_least32_t = __int32_t
+	type __uint_least32_t = __uint32_t
+	type __int_least64_t = __int64_t
+	type __uint_least64_t = __uint64_t
+	type __quad_t = int64
+	type __u_quad_t = uint64
+	type __intmax_t = int64
+	type __uintmax_t = uint64
+	type __dev_t = uint64
+	type __uid_t = uint
+	type __gid_t = uint
+	type __ino_t = uint64
+	type __ino64_t = uint64
+	type __mode_t = uint
+	type __nlink_t = uint64
+	type __off_t = int64
+	type __off64_t = int64
+	type __pid_t = int
+	type __fsid_t = struct
+		__val : int[2]
+	;;
+
+	type __clock_t = int64
+	type __rlim_t = uint64
+	type __rlim64_t = uint64
+	type __id_t = uint
+	type __time_t = int64
+	type __useconds_t = uint
+	type __suseconds_t = int64
+	type __daddr_t = int
+	type __key_t = int
+	type __clockid_t = int
+	type __timer_t = void#
+	type __blksize_t = int64
+	type __blkcnt_t = int64
+	type __blkcnt64_t = int64
+	type __fsblkcnt_t = uint64
+	type __fsblkcnt64_t = uint64
+	type __fsfilcnt_t = uint64
+	type __fsfilcnt64_t = uint64
+	type __fsword_t = int64
+	type __ssize_t = int64
+	type __syscall_slong_t = int64
+	type __syscall_ulong_t = uint64
+	type __loff_t = __off64_t
+	type __caddr_t = byte#
+	type __intptr_t = int64
+	type __socklen_t = uint
+	type __sig_atomic_t = int
+	type int8_t = __int8_t
+	type int16_t = __int16_t
+	type int32_t = __int32_t
+	type int64_t = __int64_t
+	type uint8_t = __uint8_t
+	type uint16_t = __uint16_t
+	type uint32_t = __uint32_t
+	type uint64_t = __uint64_t
+	type int_least8_t = __int_least8_t
+	type int_least16_t = __int_least16_t
+	type int_least32_t = __int_least32_t
+	type int_least64_t = __int_least64_t
+	type uint_least8_t = __uint_least8_t
+	type uint_least16_t = __uint_least16_t
+	type uint_least32_t = __uint_least32_t
+	type uint_least64_t = __uint_least64_t
+	type int_fast8_t = byte
+	type int_fast16_t = int64
+	type int_fast32_t = int64
+	type int_fast64_t = int64
+	type uint_fast8_t = byte
+	type uint_fast16_t = uint64
+	type uint_fast32_t = uint64
+	type uint_fast64_t = uint64
+	type intptr_t = int64
+	type uintptr_t = uint64
+	type intmax_t = __intmax_t
+	type uintmax_t = __uintmax_t
+
+	extern const tb_init	: ( -> int)
+	extern const tb_init_file	: (name : byte# -> int)
+	extern const tb_init_fd	: (inout : int -> int)
+	extern const tb_shutdown	: ( -> void)
+	extern const tb_width	: ( -> int)
+	extern const tb_height	: ( -> int)
+	extern const tb_clear	: ( -> void)
+	extern const tb_set_clear_attributes	: (fg : uint16_t, bg : uint16_t -> void)
+	extern const tb_present	: ( -> void)
+	extern const tb_set_cursor	: (cx : int, cy : int -> void)
+	extern const tb_put_cell	: (x : int, y : int, cell : tb_cell# -> void)
+	extern const tb_change_cell	: (x : int, y : int, ch : uint32_t, fg : uint16_t, bg : uint16_t -> void)
+	extern const tb_blit	: (x : int, y : int, w : int, h : int, cells : tb_cell# -> void)
+	extern const tb_cell_buffer	: ( -> tb_cell#)
+	extern const tb_select_input_mode	: (mode : int -> int)
+	extern const tb_select_output_mode	: (mode : int -> int)
+	extern const tb_peek_event	: (event : tb_event#, timeout : int -> int)
+	extern const tb_poll_event	: (event : tb_event# -> int)
+	extern const tb_utf8_char_length	: (c : byte -> int)
+	extern const tb_utf8_char_to_unicode	: (out : uint32_t#, c : byte# -> int)
+	extern const tb_utf8_unicode_to_char	: (out : byte#, c : uint32_t -> int)
+;;
