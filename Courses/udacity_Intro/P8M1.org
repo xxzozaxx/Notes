@@ -1,0 +1,23 @@
+* index
+    - relational concept
+    - SQL queries
+    - python DB-API
+    - Adv SQL
+
+* Rational DB concept
+** Intro
+- type of data
+  + in mem: temporary, any structure
+  + disk: flat file, json for example
+  + DB: key-value, persistent, relational
+    - safe concurrent access by any program (relation DB by any user)
+    - flexible query lang
+** L16: joining tables
+#+begin_src sqlite :csv :db P8M1.db :csv :colnames yes
+SELECT animals.name, animals.species, diet.food
+FROM animals join diet
+ON animals.species = diet.species
+   WHERE food='fish';
+#+end_src
+
+#+RESULTS:

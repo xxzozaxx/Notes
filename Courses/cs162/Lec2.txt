@@ -1,0 +1,56 @@
+4 concept
+
+1. Thread: Single unique execution
+           {PC, Register, flags, stack, mem state}
+        and it exec when it resident which mean {
+            1. PC point to instructure
+            2. instructure already loaded
+            3. stack pointer holds the address of thread stack
+            4. etc
+        } THE PROG IS RUNING.
+        and thread is suspended (not exec) when state is not loaded. and
+        at that point PC point to other thread instructures
+
+    Multiple threads run on single core (processor) via multiplex at all time.
+
+    Threads are saved in
+            - real (physical) core
+            - in mem called Tread Control Block (TCB)
+
+    It's OS work to load and unload threads from core!. and this shift is
+    triggered eithr by
+              - timer              - I/O
+              - Voluntary yield     - others will be discussed
+
+    MULTIPLE THREAD OF CONTROL
+
+2. Adress Space: the ram/mem from 0x000.. to 0xFFF... note that not single bit
+        is a valid physical bit (maybe dead bit) but it still valid from porg
+        prespective
+        in 64-bit processor: 2^{64} address which is 18x10^{18}.
+
+        to help OS to protect himself & protect users from one another we use
+        new hardware (B&B: Base & Bound) which is address point to Base (lower
+        adress thread can access) & Bound (max add...).
+        basically it draw border of each runing thread. also stack address
+        should be translated by add to base address (not 100% accurate).
+
+        x86 have more than 2 base&bound there are multiple
+
+        other idea is memory page (review it yourself)
+
+3. Process: exec envi with Restricted Rights
+   - Protected Adress space
+   - One or more threads
+   - Owns file descriptors, fs context,..... aka Resources
+   job: PROTECTION, ISOLATION
+   PS: communicatoin is easier within a process unlike between them
+       as threads within process aren't protected from each other. so
+       they are sharing.
+
+4. Dual mode operation: Kernal (supervisor) & User.
+   Obviously why
+   moderen more layer as hypervisor & docker(container)
+
+   System(kernal) has base and bound of hole mem page.
+   user has limited access
